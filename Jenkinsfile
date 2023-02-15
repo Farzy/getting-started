@@ -3,7 +3,7 @@ pipeline {
         timeout(time: 1, unit: 'HOURS')
     }
     agent {
-        label 'ec2'
+        label 'ec2-arm64'
     }
     stages {
         stage('test') {
