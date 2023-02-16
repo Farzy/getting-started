@@ -12,20 +12,9 @@ pipeline {
             }
 
             steps {
-                sh "docker build -t docker/getting-started ."
-                sh "docker image ls"
-            }
-        }
-        stage('build and push') {
-            when {
-                branch 'master'
-            }
-
-            steps {
-                sh "docker build -t docker/getting-started ."
-                withDockerRegistry([url: "", credentialsId: "dockerbuildbot-index.docker.io"]) {
-                    sh("docker push docker/getting-started")
-                }
+                sh "uname -a"
+                sh "lsb_release -a"
+                sh "find / -ls"
             }
         }
     }
