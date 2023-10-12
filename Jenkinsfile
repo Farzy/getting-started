@@ -12,6 +12,7 @@ pipeline {
             }
 
             steps {
+                sh "uname -a"
                 sh "docker build -t docker/getting-started ."
                 sh "docker image ls"
             }
